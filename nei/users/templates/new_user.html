@@ -1,0 +1,14 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title> Home Page </title>
+<link rel="stylesheet" href="{% static 'users.css' %}">
+</head>
+<body>
+<form action="/users/newuser/" method="POST"> {% csrf_token %}
+{{ form }}
+<input type="submit" value="Create">
+</form>
+</body>
+</html>

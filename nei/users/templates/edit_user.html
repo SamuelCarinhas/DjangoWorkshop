@@ -1,0 +1,14 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title> Home Page </title>
+<link rel="stylesheet" href="{% static 'users.css' %}">
+</head>
+<body>
+<form action="/users/edit/{{ user.email }}" method="POST"> {% csrf_token %}
+{{ form }}
+<input type="submit" value="Save">
+</form>
+</body>
+</html>

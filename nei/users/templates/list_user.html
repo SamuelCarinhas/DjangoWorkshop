@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+    <title> Home Page </title>
+    <link rel="stylesheet" href="{% static 'users.css' %}">
+    </head>
+<body>
+    <div class="users">
+        {% for user in users %}
+        <div class="user">
+            <p class="name">Name: {{ user.name }}</p>
+            <p class="email">Email: {{ user.email }}</p>
+
+            <a class="edit" href="{% url 'edit' user.email %}">Edit</a>
+            <a class="delete" href="{% url 'delete' user.email %}">Delete</a>
+        </div>
+        {% endfor %}
+    </div>
+    <a class="new" href="/users/newuser">New User</a>
+</body>
+</html>
